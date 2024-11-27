@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
+
 import socket from "../services/socket";
+import axios from "../services/axios";
+import { useChat } from "@/context/ChatContext";
+
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import axios from "../services/axios";
 
-interface RoomListProps {
-  username: string;
-  setCurrentRoom: (room: string) => void;
-}
+const RoomList: React.FC = () => {
+  const { username, setCurrentRoom } = useChat();
 
-const RoomList: React.FC<RoomListProps> = ({ username, setCurrentRoom }) => {
   const [rooms, setRooms] = useState<string[]>([]);
   const [newRoom, setNewRoom] = useState("");
 

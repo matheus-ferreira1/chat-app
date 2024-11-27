@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
+
 import socket from "../services/socket";
+import { useChat } from "@/context/ChatContext";
+
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
@@ -9,17 +12,9 @@ interface IMessage {
   text: string;
 }
 
-interface ChatProps {
-  username: string;
-  currentRoom: string;
-  setCurrentRoom: (room: null) => void;
-}
+const Chat: React.FC = () => {
+  const { username, currentRoom, setCurrentRoom } = useChat();
 
-const Chat: React.FC<ChatProps> = ({
-  username,
-  currentRoom,
-  setCurrentRoom,
-}) => {
   const [messages, setMessages] = useState<IMessage[]>([]);
   const [input, setInput] = useState("");
 
@@ -38,7 +33,7 @@ const Chat: React.FC<ChatProps> = ({
     e.preventDefault();
 
     const messageToSend: IMessage = {
-      user: username,
+      user: username!,
       text: input,
     };
 

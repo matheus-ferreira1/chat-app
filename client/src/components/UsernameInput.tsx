@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
+
 import socket from "../services/socket";
+import { useChat } from "@/context/ChatContext";
+
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 
-interface UsernameInputProps {
-  setUsername: (username: string) => void;
-}
-
-const UsernameInput: React.FC<UsernameInputProps> = ({ setUsername }) => {
+const UsernameInput: React.FC = () => {
+  const { setUsername } = useChat();
   const [input, setInput] = useState("");
 
   useEffect(() => {
