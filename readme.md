@@ -1,4 +1,4 @@
-# **Full Stack Chat Application with Docker**
+# **Chat em tempo real - Full Stack com Docker**
 
 Este projeto é uma aplicação de chat em tempo real full stack construída com **NestJS** (backend), **MySQL** (banco de dados) e **React** (frontend), containerizada usando **Docker**.
 
