@@ -76,12 +76,6 @@ Isso irá:
 - Frontend:
     - O frontend está disponível na porta 5173 e se comunica com o backend via URL http://backend:3000 (na rede Docker).
  
-## Arquivos Importantes
-- docker-compose.yml: Define os serviços (frontend, backend, mysql) e suas configurações.
-- nginx.conf: Configuração do Nginx para servir o frontend React e fazer proxy de requisições WebSocket e API para o backend.
-- Dockerfile (Frontend): Especifica como construir e servir o frontend React com o Nginx.
-- Dockerfile (Backend): Especifica como construir o backend NestJS.
-
 ## Parando os Containers
 
 Execute o seguinte comando para construir e iniciar os containers:
